@@ -29,7 +29,9 @@ task jacocoTestReport(type: JacocoReport, dependsOn: ['testDebugUnitTest', 'crea
 
 this method will generate complete test coverage report inform of html
 
+```
 CleanArchitectureMVVM/app/build/reports/tests/testDebugUnitTest/index.html
+```
 
 Simply Copy and paste this link in you web-browser and check test coverage report
 
