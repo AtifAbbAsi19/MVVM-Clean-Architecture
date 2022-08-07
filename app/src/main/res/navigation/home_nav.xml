@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_nav.xml"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.inc.clean_architecturemvvm.ui.fragment.homefragment.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+
+
+        <action
+            android:id="@+id/action_homeFragment_to_articleDetailsFragment"
+            app:destination="@id/articleDetailsFragment"/>
+
+
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/articleDetailsFragment"
+        android:name="com.inc.clean_architecturemvvm.ui.fragment.articledetails.ArticleDetailsFragment"
+        android:label="fragment_article_details"
+        tools:layout="@layout/fragment_article_details">
+
+
+        <argument
+            android:name="articleItem"
+            android:defaultValue="@null"
+            app:argType="com.inc.clean_architecturemvvm.data.model.article.ArticleItem"
+            app:nullable="true" />
+
+    </fragment>
+
+</navigation>
