@@ -1,5 +1,13 @@
 # MVVM-Clean-Architecture
-Project that is build using clean architecture ,mvvm , Kotlin , Unit Test cases
+Below are requirments on which project is developed
+
+*	object oriented programming approach 
+*	Clean Architecture (MVVM)
+*	Use of Hilt
+*	Use of Jetpack components (NavGraph, DataBinding)
+*	Kotlin (Coroutines)
+*	Retrofit and GSON
+*	unit test and code coverage 
 
 
 ## Getting Started
