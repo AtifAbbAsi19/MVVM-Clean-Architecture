@@ -3,7 +3,7 @@ package com.inc.clean_architecturemvvm.viewmodel.homeviewmodel
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.inc.clean_architecturemvvm.data.dto.mappers.toArticle
+import com.inc.clean_architecturemvvm.data.mappers.toArticle
 import com.inc.clean_architecturemvvm.data.model.article.ArticleItem
 import com.inc.clean_architecturemvvm.network.networkstates.ApiState
 import com.inc.clean_architecturemvvm.repositories.homerepository.HomeRepository

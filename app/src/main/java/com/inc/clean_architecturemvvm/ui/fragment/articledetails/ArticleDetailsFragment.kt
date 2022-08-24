@@ -12,6 +12,7 @@ import androidx.navigation.fragment.navArgs
 import com.inc.clean_architecturemvvm.R
 import com.inc.clean_architecturemvvm.databinding.FragmentArticleDetailsBinding
 import com.inc.clean_architecturemvvm.databinding.FragmentHomeBinding
+import com.inc.clean_architecturemvvm.ui.activity.main.MainActivity
 import com.inc.clean_architecturemvvm.ui.core.BaseFragment
 import com.inc.clean_architecturemvvm.ui.fragment.homefragment.HomeFragmentDirections
 import com.inc.clean_architecturemvvm.viewmodel.homeviewmodel.HomeViewModel
@@ -41,15 +42,15 @@ class ArticleDetailsFragment : BaseFragment<FragmentArticleDetailsBinding, HomeV
         return _binding?.root
     }
 
- /*   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+  override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+       //  _binding?.item = args.articleItem
 
-         _binding?.item = args.articleItem
-
+      (requireActivity() as MainActivity).showBackButton(visibility = true)
 
 
     }
-*/
+
     override fun getLayoutId(): Int {
 
         return R.layout.fragment_article_details

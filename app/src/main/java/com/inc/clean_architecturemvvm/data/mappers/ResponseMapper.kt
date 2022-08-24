@@ -1,4 +1,4 @@
-package com.inc.clean_architecturemvvm.data.dto.mappers
+package com.inc.clean_architecturemvvm.data.mappers
 
 
 import android.text.TextUtils

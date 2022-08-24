@@ -1,5 +1,6 @@
 package com.inc.clean_architecturemvvm.ui.core
 
+import android.app.ActionBar
 import android.os.Bundle
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
@@ -7,22 +8,22 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import com.inc.clean_architecturemvvm.viewmodel.core.BaseViewModel
 
-abstract class BaseActivity<binding : ViewDataBinding, viewModel : BaseViewModel?> :
+abstract class BaseActivity<BINDING : ViewDataBinding, VIEWMODEL : BaseViewModel?> :
     AppCompatActivity() {
 
-    private lateinit var _binding: binding
-    private var _baseViewModel: viewModel? = null
+    private lateinit var _binding: BINDING
+    private var _baseViewModel: VIEWMODEL? = null
 
     @LayoutRes
     abstract fun getLayout(): Int
 
-    abstract fun getViewModel(): viewModel?
+    abstract fun getViewModel(): VIEWMODEL?
 
     // lateinit var appContext: Context
 
     abstract fun onFinish()
 
-    open fun getBinding(): binding? {
+    open fun getBinding(): BINDING? {
         return _binding
     }
 
@@ -55,6 +56,10 @@ abstract class BaseActivity<binding : ViewDataBinding, viewModel : BaseViewModel
         super.onDestroy()
     }
 
+
+    open fun showBackButton(visibility : Boolean) {
+
+    }
 
     override fun onBackPressed() {
         super.onBackPressed()

@@ -75,7 +75,7 @@ object MockUtils {
     const val articleFailResponse = "{\n" +
             "  \"status\": \"Fail\",\n" +
             "  \"copyright\": \"Copyright (c) 2022 The New York Times Company.  All Rights Reserved.\",\n" +
-            "  \"num_results\": 20,\n" +
+            "  \"num_results\": 0,\n" +
             "  \"results\": [\n" +
             "    \n" +
             "  ]\n" +
