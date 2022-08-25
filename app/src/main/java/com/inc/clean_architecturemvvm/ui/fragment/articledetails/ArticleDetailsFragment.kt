@@ -15,6 +15,7 @@ import com.inc.clean_architecturemvvm.databinding.FragmentHomeBinding
 import com.inc.clean_architecturemvvm.ui.activity.main.MainActivity
 import com.inc.clean_architecturemvvm.ui.core.BaseFragment
 import com.inc.clean_architecturemvvm.ui.fragment.homefragment.HomeFragmentDirections
+import com.inc.clean_architecturemvvm.utils.handleBackButtonEvent
 import com.inc.clean_architecturemvvm.viewmodel.homeviewmodel.HomeViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -37,18 +38,20 @@ class ArticleDetailsFragment : BaseFragment<FragmentArticleDetailsBinding, HomeV
             container,
             savedInstanceState
         )//calling super to get parent method call and after it execute our method
-       // _binding?.item = sharedViewModel._articleItem.value
+        // _binding?.item = sharedViewModel._articleItem.value
         _binding?.item = args.articleItem
         return _binding?.root
     }
 
-  override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-       //  _binding?.item = args.articleItem
+        //  _binding?.item = args.articleItem
 
-      (requireActivity() as MainActivity).showBackButton(visibility = true)
+        (requireActivity() as MainActivity).showBackButton(visibility = true)
 
-
+        handleBackButtonEvent {
+            Navigation.findNavController(view).popBackStack()
+        }
     }
 
     override fun getLayoutId(): Int {
@@ -62,7 +65,7 @@ class ArticleDetailsFragment : BaseFragment<FragmentArticleDetailsBinding, HomeV
 
     override fun onFinish() {
         sharedViewModel.selectedArticle(null)
-       // args.toBundle().clear()
+        // args.toBundle().clear()
     }
 
 

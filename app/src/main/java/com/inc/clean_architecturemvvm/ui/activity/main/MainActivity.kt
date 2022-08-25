@@ -18,8 +18,17 @@ class MainActivity : BaseActivity<ActivityMainBinding, HomeViewModel>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        clickListeners()
+    }
+
+    private fun clickListeners() {
+
+        getBinding()?.appBarLayout?.settingOnBackPressBtn?.setOnClickListener {
+            onBackPressed()
+        }
 
     }
+
 
     override fun getLayout(): Int {
         return R.layout.activity_main
@@ -33,8 +42,9 @@ class MainActivity : BaseActivity<ActivityMainBinding, HomeViewModel>() {
     override fun showBackButton(visibility: Boolean) {
         super.showBackButton(visibility)
 
-        getBinding()?.appBarLayout?.settingOnBackPressBtn?.visibility = if (visibility) View.VISIBLE else
-            View.GONE
+        getBinding()?.appBarLayout?.settingOnBackPressBtn?.visibility =
+            if (visibility) View.VISIBLE else
+                View.GONE
 
     }
 

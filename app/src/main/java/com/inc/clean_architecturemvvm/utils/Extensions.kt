@@ -2,8 +2,11 @@ package com.inc.clean_architecturemvvm.utils
 
 import android.content.res.Resources
 import android.widget.ImageView
+import androidx.activity.OnBackPressedCallback
+import androidx.activity.addCallback
 import androidx.annotation.RawRes
 import androidx.databinding.BindingAdapter
+import androidx.fragment.app.Fragment
 import com.google.android.material.imageview.ShapeableImageView
 import com.squareup.picasso.Picasso
 
@@ -24,3 +27,12 @@ fun ShapeableImageView.loadImage(url: String?) {
 
 fun Resources.getRawTextFile(@RawRes id: Int) =
     openRawResource(id).bufferedReader().use { it.readText() }
+
+
+fun Fragment.handleBackButtonEvent(
+    onBackPressed: OnBackPressedCallback.() -> Unit
+) {
+    requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
+        this.onBackPressed()
+    }
+}
