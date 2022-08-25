@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NotNull
 import org.jetbrains.annotations.Nullable
 
 
-@Entity(tableName = "article_items_entity", primaryKeys = ["_id"])
+@Entity(tableName = "article_items_entity") //, primaryKeys = ["_id"]
 data class ArticleItemEntity @JvmOverloads constructor(
 
     // specifying its initial value as 0
@@ -29,7 +29,7 @@ data class ArticleItemEntity @JvmOverloads constructor(
     @Nullable
     val abstractDescription: String? = null,
 
-    @Embedded(prefix = "media")
+   // @Embedded(prefix = "media")
     @SerializedName("media")
     @Nullable
     val media: List<ArticleMediaItemEntity?>? = null,

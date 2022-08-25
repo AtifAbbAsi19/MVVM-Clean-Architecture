@@ -12,10 +12,10 @@ data class ArticleMediaItemEntity   constructor(
     val copyright: String? = null,
 
    // @Embedded(prefix = "mediaMetadata")
-/*
+
     @SerializedName("mediaMetadata")
     val mediaMetadata: List<MediaMetadataItemEntity?>? = null,
-*/
+
 
     @ColumnInfo("subtype")
     val subtype: String? = null,

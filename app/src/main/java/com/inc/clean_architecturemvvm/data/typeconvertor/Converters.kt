@@ -61,4 +61,21 @@ object Converters {
     }
 
 
+
+    @TypeConverter
+    fun articleMediaItemEntityListToJsonString(value: List<ArticleMediaItemEntity>?): String = Gson().toJson(value)
+
+    @TypeConverter
+    fun jsonStringToArticleMediaItemEntityList(value: String) = Gson().fromJson(value, Array<ArticleMediaItemEntity>::class.java).toList()
+
+
+
+    @TypeConverter
+    fun mediaMetadataItemEntityListToJsonString(value: List<MediaMetadataItemEntity>?): String = Gson().toJson(value)
+
+    @TypeConverter
+    fun jsonStringToMediaMetadataItemEntityList(value: String) = Gson().fromJson(value, Array<MediaMetadataItemEntity>::class.java).toList()
+
+
+
 }
